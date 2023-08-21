@@ -1,0 +1,35 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+}
+
+#drawer {
+    flex: 1;
+    height: 100%;
+    overflow: hidden scroll;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+#map {
+    flex: 3;
+    height: 100%;
+}
+
+.city {
+    padding: 5px;
+    background-color: grey;
+    border-radius: 5px;
+}
