@@ -20,51 +20,16 @@
   <div id="drawer">
     <h1>City Barycentre Calculator</h1>
     <input type="text" name="cityinput" id="cityinput" placeholder="Entrez une adresse, une ville...">
-    <div id="citylist">
-      <p>Liste des villes</p>
-      <div class="city">
-        Lyon
-      </div>
-    </div>
+    <button disabled="true" id="addcity">Ajouter cette ville au calcul</button>
+    <p>Liste des villes</p>
+    <div id="citieslist"></div>
   </div>
   <div id="map"></div>
 
   <!-- Logic part -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script>
-    var map = L.map('map').setView([45.7578137, 4.8320114], 13);
-
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-    L.tileLayer('https://vrock691.web.app', {
-      attribution: '<a href="https://vrock691.web.app">Valentin Mary</a>'
-    }).addTo(map);
-
-    var popup = L.popup();
-
-    function onMapClick(e) {
-      popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(map);
-    }
-
-    map.on('click', onMapClick);
-
-    // input search
-    document.getElementById('cityinput').onkeypress = function (e) {
-      if (!e) e = window.event;
-      var keyCode = e.code || e.key;
-      if (keyCode == 'Enter') {
-        alert('pressed')       
-        return false;
-      }
-    }
-
-
-  </script>
+  <script src="./script.js"></script>
 </body>
 
 </html>
